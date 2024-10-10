@@ -75,12 +75,12 @@ in
     version =
       if playbackSlippi
       then "3.4.3"
-      else "3.4.1";
+      else "3.4.2";
     name = "${pname}-${version}";
     src = fetchFromGitHub {
       owner = "project-slippi";
       repo = "Ishiiruka";
-      rev = "v3.4.1";
+      rev = "v3.4.2";
 
       hash = "sha256-uqy9YQnvryTHmskzlX+4st1VacnHbpC2gdC+PgvFUlA=";
       fetchSubmodules = true;

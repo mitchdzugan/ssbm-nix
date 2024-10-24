@@ -81,6 +81,10 @@ in
       owner = "project-slippi";
       repo = "Ishiiruka";
       rev = "v3.4.2";
+      rev =
+        if playbackSlippi
+        then "70328610bd751858d5677576dd3b2ebf9ced37a6"
+        else "v3.4.2";
 
       hash = "sha256-zvjGKneUjOXsRkWuNNK2X0MwfduCYGA9Sp0osa9fQsU=";
       fetchSubmodules = true;

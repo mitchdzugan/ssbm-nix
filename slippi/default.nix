@@ -116,7 +116,7 @@ in
 
     postBuild = ''
       cp -r -n ../Data/Sys/ Binaries/
-      if [ "${playbackSlippi}" == "true" ]; then
+      if [ "${if playbackSlippi then "1" else "0"}" == "1" ]; then
         rm -rf Binaries/Sys/GameSettings
         cp -r ../Data/PlaybackGeckoCodes/. Binaries/Sys/GameSettings
       fi

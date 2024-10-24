@@ -116,6 +116,10 @@ in
 
     postBuild = ''
       cp -r -n ../Data/Sys/ Binaries/
+      if [ "${playbackSlippi}" == "true" ]; then
+        rm -rf Binaries/Sys/GameSettings
+        cp -r ../Data/PlaybackGeckoCodes/. Binaries/Sys/GameSettings
+      fi
       cp -r Binaries/ $out
       mkdir -p $out/lib
       cp $build/build/source/build/Source/Core/DolphinWX/libslippi_rust_extensions.so $out/lib

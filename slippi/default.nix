@@ -80,7 +80,6 @@ in
     src = fetchFromGitHub {
       owner = "project-slippi";
       repo = "Ishiiruka";
-      rev = "v3.4.2";
       rev =
         if playbackSlippi
         then "70328610bd751858d5677576dd3b2ebf9ced37a6"

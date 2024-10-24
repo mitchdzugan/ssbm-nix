@@ -85,7 +85,6 @@ in
         then "70328610bd751858d5677576dd3b2ebf9ced37a6"
         else "v3.4.2";
 
-      hash = "sha256-zvjGKneUjOXsRkWuNNK2X0MwfduCYGA9Sp0osa9fQsU=";
       hash =
         if playbackSlippi
         then "sha256-uqy9YQnvryTHmskzlX+4st1VacnHbpC2gdC+PgvFUlA="

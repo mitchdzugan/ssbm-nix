@@ -86,6 +86,10 @@ in
         else "v3.4.2";
 
       hash = "sha256-zvjGKneUjOXsRkWuNNK2X0MwfduCYGA9Sp0osa9fQsU=";
+      hash =
+        if playbackSlippi
+        then "sha256-uqy9YQnvryTHmskzlX+4st1VacnHbpC2gdC+PgvFUlA="
+        else "sha256-zvjGKneUjOXsRkWuNNK2X0MwfduCYGA9Sp0osa9fQsU";
       fetchSubmodules = true;
     };
 

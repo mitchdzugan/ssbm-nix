@@ -130,7 +130,7 @@ in
       if playbackSlippi
       then ''
         wrapProgram "$out/dolphin-emu" \
-          --set "GDK_BACKEND" "x11" \
+          --set "GDK_BACKEND" "wayland" \
           --prefix GIO_EXTRA_MODULES : "${glib-networking}/lib/gio/modules" \
           --prefix LD_LIBRARY_PATH : "${vulkan-loader}/lib" \
           --prefix PATH : "${xdg-utils}/bin"
@@ -139,7 +139,7 @@ in
       ''
       else ''
         wrapProgram "$out/dolphin-emu" \
-          --set "GDK_BACKEND" "x11" \
+          --set "GDK_BACKEND" "wayland" \
           --prefix GIO_EXTRA_MODULES : "${glib-networking}/lib/gio/modules" \
           --prefix LD_LIBRARY_PATH : "${vulkan-loader}/lib" \
           --prefix PATH : "${xdg-utils}/bin"

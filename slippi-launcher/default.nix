@@ -28,7 +28,7 @@ stdenvNoCC.mkDerivation rec {
   desktopItems = [
     (makeDesktopItem {
       name = "slippi-launcher";
-      exec = "slippi-launcher-${version}";
+      exec = "slippi-launcher";
       icon = "slippi-launcher";
       desktopName = "Slippi Launcher";
       comment = "The way to play Slippi Online and watch replays";

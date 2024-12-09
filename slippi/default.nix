@@ -119,16 +119,15 @@ in
       if [ "${if playbackSlippi then "1" else "0"}" == "1" ]; then
         rm -rf Binaries/Sys/GameSettings
         cp -r ../Data/PlaybackGeckoCodes/. Binaries/Sys/GameSettings
-        cat >> Binaries/Sys/GameSettings/GALE01r2.ini << EOF
-
-        $Optional: Prevent Character Crowd Chants [Fizzi]
-        * Disables crowd chanting for characters
-        04321D70 38600000
-
-        $Optional: Prevent Crowd Noises [Fizzi]
-        * Disables all other crowd oohs, ahs and whoahs
-        04024170 3860FFFF
-        EOF
+        echo "" >> Binaries/Sys/GameSettings/GALE01r2.ini
+        echo "" >> Binaries/Sys/GameSettings/GALE01r2.ini
+        echo "\$Optional: Prevent Character Crowd Chants [Fizzi]" >> Binaries/Sys/GameSettings/GALE01r2.ini
+        echo "* Disables crowd chanting for characters" >> Binaries/Sys/GameSettings/GALE01r2.ini
+        echo "04321D70 38600000" >> Binaries/Sys/GameSettings/GALE01r2.ini
+        echo "" >> Binaries/Sys/GameSettings/GALE01r2.ini
+        echo "\$Optional: Prevent Crowd Noises [Fizzi]" >> Binaries/Sys/GameSettings/GALE01r2.ini
+        echo "* Disables all other crowd oohs, ahs and whoahs" >> Binaries/Sys/GameSettings/GALE01r2.ini
+        echo "04024170 3860FFFF" >> Binaries/Sys/GameSettings/GALE01r2.ini
       fi
       cp -r Binaries/ $out
       mkdir -p $out/lib

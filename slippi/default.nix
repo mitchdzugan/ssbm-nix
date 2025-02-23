@@ -74,16 +74,16 @@ in
       else "slippi-ishiiruka-netplay";
     version =
       if playbackSlippi
-      then "3.4.3"
-      else "3.4.2";
+      then "3.4.5"
+      else "3.4.5";
     name = "${pname}-${version}";
     src = fetchFromGitHub {
       owner = "project-slippi";
       repo = "Ishiiruka";
       rev =
         if playbackSlippi
-        then "70328610bd751858d5677576dd3b2ebf9ced37a6"
-        else "v3.4.2";
+        then "1e0c14a40a05612a8c959e9963d111ca24060203"
+        else "v3.4.5";
 
       hash =
         if playbackSlippi

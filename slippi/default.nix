@@ -87,7 +87,7 @@ in
 
       hash =
         if playbackSlippi
-        then "sha256-ZZZ9YQnvryTHmskzlX+4st1VacnHbpC2gdC+PgvFUlA="
+        then "sha256-Ce1CiEj7dMgECWK+Sx6t1rkmZb0s+DMEdthsbfMEwOs="
         else "sha256-ZZZGKneUjOXsRkWuNNK2X0MwfduCYGA9Sp0osa9fQsU";
       fetchSubmodules = true;
     };

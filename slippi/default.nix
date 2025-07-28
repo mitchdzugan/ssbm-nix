@@ -168,7 +168,6 @@ in
     buildInputs = [
       vulkan-loader
       makeWrapper
-      mesa.drivers
       mesa
       pkg-config
       bluez

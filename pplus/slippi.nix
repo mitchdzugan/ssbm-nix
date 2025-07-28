@@ -91,7 +91,6 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [pkg-config cmake];
   buildInputs = [
-    mesa.drivers
     mesa
     pkg-config
     bluez

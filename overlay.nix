@@ -13,11 +13,13 @@ with final.pkgs; rec {
   slippi-playback = callPackage ./slippi {
     inherit slippi-desktop;
     playbackSlippi = true;
+    webkitgtk_ = final.pkgs.webkitgtk.gtk4;
   };
 
   slippi-netplay = callPackage ./slippi {
     inherit slippi-desktop;
     playbackSlippi = false;
+    webkitgtk_ = final.pkgs.webkitgtk.gtk4;
   };
 
   slippi-netplay-chat-edition = slippi-netplay.overrideAttrs (oldAttrs: rec {

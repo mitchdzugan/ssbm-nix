@@ -33,7 +33,7 @@
   enet,
   xdg-utils,
   hidapi,
-  webkitgtk,
+  webkitgtk_,
   projectplus-sdcard,
   projectplus-config,
   tree,
@@ -126,7 +126,7 @@ stdenv.mkDerivation rec {
     enet
     xdg-utils
     hidapi
-    webkitgtk
+    webkitgtk_
     projectplus-sdcard
     projectplus-config
     tree

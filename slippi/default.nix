@@ -39,7 +39,7 @@
   enet,
   xdg-utils,
   hidapi,
-  webkitgtk,
+  webkitgtk_,
   vulkan-loader,
   rustc,
   cargo,
@@ -204,7 +204,7 @@ in
       enet
       xdg-utils
       hidapi
-      webkitgtk
+      webkitgtk_
       alsa-lib
     ];
   }

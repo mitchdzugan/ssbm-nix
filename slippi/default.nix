@@ -39,7 +39,7 @@
   enet,
   xdg-utils,
   hidapi,
-  webkitgtk_,
+  webkitgtk_6_0,
   vulkan-loader,
   rustc,
   cargo,
@@ -74,21 +74,21 @@ in
       else "slippi-ishiiruka-netplay";
     version =
       if playbackSlippi
-      then "3.4.5"
-      else "3.4.5";
+      then "3.4.6"
+      else "3.4.6";
     name = "${pname}-${version}";
     src = fetchFromGitHub {
       owner = "project-slippi";
       repo = "Ishiiruka";
       rev =
         if playbackSlippi
-        then "1e0c14a40a05612a8c959e9963d111ca24060203"
-        else "v3.4.5";
+        then "90f18e459a757f6112859c6a2526179359f3c0d6"
+        else "v3.4.6";
 
       hash =
         if playbackSlippi
-        then "sha256-Ce1CiEj7dMgECWK+Sx6t1rkmZb0s+DMEdthsbfMEwOs="
-        else "sha256-Ce1CiEj7dMgECWK+Sx6t1rkmZb0s+DMEdthsbfMEwOs=";
+        then "sha256-yiu0ObLc0qbE3r9xUnm0ktpoH/i1k16JqGxgm5KIkGI="
+        else "sha256-TR1x//5Zs2FDKiuGfoRrh5S1OfTnIPMbzmIlOprXGf4=";
       fetchSubmodules = true;
     };
 
@@ -204,7 +204,7 @@ in
       enet
       xdg-utils
       hidapi
-      webkitgtk_
+      webkitgtk_6_0
       alsa-lib
     ];
   }

@@ -140,13 +140,14 @@ in
     installPhase =
       if playbackSlippi
       then ''
-        wrapProgram "$out/dolphin-emu" \
+        mv "$out/dolphin-emu" "$out/dolphin-emu-playback"
+        wrapProgram "$out/dolphin-emu-playback" \
           --set "GDK_BACKEND" "x11" \
           --prefix GIO_EXTRA_MODULES : "${glib-networking}/lib/gio/modules" \
           --prefix LD_LIBRARY_PATH : "${vulkan-loader}/lib" \
           --prefix LD_LIBRARY_PATH : "$out/lib/playback" \
           --prefix PATH : "${xdg-utils}/bin"
-        ln -s $out/dolphin-emu $out/bin/slippi-playback
+        ln -s $out/dolphin-emu-playback $out/bin/slippi-playback
         ln -s ${playback-desktop}/share/applications $out/share
       ''
       else ''

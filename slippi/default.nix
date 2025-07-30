@@ -141,6 +141,7 @@ in
       if playbackSlippi
       then ''
         mv "$out/dolphin-emu" "$out/dolphin-emu-playback"
+        mv "$out/traversal_server" "$out/traversal_server-playback"
         wrapProgram "$out/dolphin-emu-playback" \
           --set "GDK_BACKEND" "x11" \
           --prefix GIO_EXTRA_MODULES : "${glib-networking}/lib/gio/modules" \

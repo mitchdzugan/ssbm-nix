@@ -116,7 +116,9 @@ in
 
     postBuild = ''
       cp -r -n ../Data/Sys/ Binaries/
+      libPath="$out/lib/netplay"
       if [ "${if playbackSlippi then "1" else "0"}" == "1" ]; then
+        libPath="$out/lib/playback"
         rm -rf Binaries/Sys/GameSettings
         cp -r ../Data/PlaybackGeckoCodes/. Binaries/Sys/GameSettings
         echo "" >> Binaries/Sys/GameSettings/GALE01r2.ini
@@ -130,8 +132,8 @@ in
         echo "04024170 3860FFFF" >> Binaries/Sys/GameSettings/GALE01r2.ini
       fi
       cp -r Binaries/ $out
-      mkdir -p $out/lib
-      cp $build/build/source/build/Source/Core/DolphinWX/libslippi_rust_extensions.so $out/lib
+      mkdir -p $libPath
+      cp $build/build/source/build/Source/Core/DolphinWX/libslippi_rust_extensions.so $libPath
       mkdir -p $out/bin
     '';
 
@@ -142,6 +144,7 @@ in
           --set "GDK_BACKEND" "x11" \
           --prefix GIO_EXTRA_MODULES : "${glib-networking}/lib/gio/modules" \
           --prefix LD_LIBRARY_PATH : "${vulkan-loader}/lib" \
+          --prefix LD_LIBRARY_PATH : "$out/lib/playback" \
           --prefix PATH : "${xdg-utils}/bin"
         ln -s $out/dolphin-emu $out/bin/slippi-playback
         ln -s ${playback-desktop}/share/applications $out/share
@@ -151,6 +154,7 @@ in
           --set "GDK_BACKEND" "x11" \
           --prefix GIO_EXTRA_MODULES : "${glib-networking}/lib/gio/modules" \
           --prefix LD_LIBRARY_PATH : "${vulkan-loader}/lib" \
+          --prefix LD_LIBRARY_PATH : "$out/lib/netplay" \
           --prefix PATH : "${xdg-utils}/bin"
         ln -s $out/dolphin-emu $out/bin/slippi-netplay
         ln -s ${netplay-desktop}/share/applications $out/share
